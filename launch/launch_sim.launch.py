@@ -17,7 +17,7 @@ def generate_launch_description():
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
 
-    package_name='articubot_one' #<--- CHANGE ME
+    package_name='my_bot' #<--- CHANGE ME
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -89,10 +89,10 @@ def generate_launch_description():
     # Launch them all!
     return LaunchDescription([
         rsp,
-        joystick,
-        twist_mux,
+        # joystick,
+        # twist_mux,
         gazebo,
         spawn_entity,
-        diff_drive_spawner,
-        joint_broad_spawner
+        # diff_drive_spawner,
+        # joint_broad_spawner
     ])
