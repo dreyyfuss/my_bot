@@ -78,7 +78,7 @@ def generate_launch_description():
     delayed_joint_broad_spawner = RegisterEventHandler(
         event_handler=OnProcessStart(
             target_action=controller_manager,
-            on_start=[diff_drive_spawner],
+            on_start=[joint_broad_spawner],
         )
     )
 
