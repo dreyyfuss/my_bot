@@ -1,0 +1,31 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 30.0
+    sensor_timeout: 0.1
+
+    # Frame IDs
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+
+    # Odometry (wheel encoders)
+    odom0: /diff_cont/odome
+    odom0_config: [true, true, false,  # x, y, z positions
+                   false, false, true, # roll, pitch, yaw
+                   true, true, false,  # x, y, z velocities
+                   false, false, true] # roll, pitch, yaw velocities
+
+    # IMU data
+    imu0: /imu
+    imu0_config: [false, false, false, # x, y, z positions
+                  true, true, true,    # roll, pitch, yaw
+                  false, false, false, # x, y, z velocities
+                  true, true, true]    # roll, pitch, yaw velocities
+
+    imu0_differential: false
+    imu0_remove_gravitational_acceleration: true
+
+    use_control: false
+    debug: false
+    publish_tf: true
